@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // Ensure API_BASE_URL points directly to your Render backend:
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "https://smart-resume-screener-n8ue.onrender.com";
+const API_BASE_URL ="https://smart-resume-screener-n8ue.onrender.com";
 
 // If using Axios instance:
 const api = axios.create({
