@@ -1,9 +1,7 @@
 import axios from 'axios';
 
-// Ensure API_BASE_URL points directly to your Render backend:
-const API_BASE_URL ="https://smart-resume-screener-n8ue.onrender.com";
+const API_BASE_URL = "https://smart-resume-screener-n8ue.onrender.com";
 
-// If using Axios instance:
 const api = axios.create({
   baseURL: API_BASE_URL,
 });
@@ -13,7 +11,8 @@ export const evaluateResume = async (jobDescription, file) => {
   formData.append('job_description', jobDescription);
   formData.append('file', file);
 
-  const response = await api.post('/evaluate', formData, {
+  // Added /api prefix here!
+  const response = await api.post('/api/evaluate', formData, {
     headers: {
       'Content-Type': 'multipart/form-data',
     },
@@ -22,6 +21,7 @@ export const evaluateResume = async (jobDescription, file) => {
 };
 
 export const getCandidates = async () => {
-  const response = await api.get('/candidates');
+  // Added /api prefix here too!
+  const response = await api.get('/api/candidates');
   return response.data;
 };
